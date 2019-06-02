@@ -5,10 +5,31 @@
   "repository": "https://github.com/Charlang/counterpart-recognition.git",
   "author": "Charlie.Lang <chaolunlang@163.com>",
   "license": "MIT",
+  "scripts": {
+    "watch": "gulp",
+    "build": "tsc -b tsconfig.json",
+    "start": "node ./dist/app.js"
+  },
   "dependencies": {
+    "apollo-datasource": "^0.5.0",
+    "apollo-datasource-rest": "^0.5.0",
+    "apollo-server-express": "^2.6.1",
     "brain.js": "^1.6.1",
     "express": "^4.17.1",
+    "graphql": "^14.3.1",
+    "graphql-tools": "^4.0.4",
+    "lodash": "^4.17.11",
     "morgan": "^1.9.1",
+    "natural": "^0.6.3",
     "typescript": "^3.5.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "@types/graphql": "^14.2.0",
+    "@types/lodash": "^4.14.133",
+    "@types/morgan": "^1.7.35",
+    "@types/natural": "^0.6.0",
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^5.0.1"
   }
 }
