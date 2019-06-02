@@ -1,5 +1,5 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
-import { addDocument, addDocuments, classify, classifications, train } from '../natural'
+import { addDocument, addDocuments, classify, classifications, reTrain, train } from '../natural'
 
 class ClassifyApi extends RESTDataSource {
     constructor() {
@@ -12,11 +12,11 @@ class ClassifyApi extends RESTDataSource {
         return classifications(input);
     }
     async addDocument(input: string, output: string) {
-        addDocument(input, output);
+        await addDocument(input, output);
         return 'Document Added';
     }
     async addDocuments(document: [{input: string[], output: string}]) {
-        document.forEach(({input, output}) => {
+        await document.forEach(({input, output}) => {
             addDocuments(input, output);
         })
         return 'Document Added';
@@ -24,6 +24,10 @@ class ClassifyApi extends RESTDataSource {
     async train() {
         train();
         return 'Start Training...';
+    }
+    async reTrain() {
+        await reTrain();
+        return 'Start Re Training...';
     }
 }
 

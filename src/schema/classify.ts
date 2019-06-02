@@ -10,6 +10,7 @@ export const typeDef = gql`
         addDocument(input: String, output: String): String
         addDocuments(document: [Documents]): String
         train: String
+        reTrain: String
     }
     input Documents {
         input: [String]
@@ -43,6 +44,10 @@ export const resolvers = {
         },
         train: async (_: any, __: any, { dataSources }: { dataSources: dataSources }) => {
             const result = await dataSources.classifyApi.train();
+            return result;
+        },
+        reTrain: async (_: any, __: any, { dataSources }: { dataSources: dataSources }) => {
+            const result = await dataSources.classifyApi.reTrain();
             return result;
         },
     },
