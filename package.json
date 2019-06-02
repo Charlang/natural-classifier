@@ -1,0 +1,14 @@
+{
+  "name": "counterpart-recognition",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Charlang/counterpart-recognition.git",
+  "author": "Charlie.Lang <chaolunlang@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "brain.js": "^1.6.1",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "typescript": "^3.5.1"
+  }
+}
