@@ -6,6 +6,8 @@ let classifier = new natural.BayesClassifier();
 
 let hasDocuments = false;
 
+const documentsMap = new Map<string, Map<string, string>>();
+
 let isNotEmpty = async () => {
     const stat = await fsPromises.stat(`${process.cwd()}/data/documents`);
     console.log(`Document Size: ${stat.size}`);
