@@ -8,7 +8,8 @@
   "scripts": {
     "watch": "gulp",
     "build": "tsc -b tsconfig.json",
-    "start": "node ./dist/app.js"
+    "start": "node ./dist/app.js",
+    "lint": "tslint -c tslint.json -p tsconfig.json"
   },
   "dependencies": {
     "apollo-datasource": "^0.5.0",
@@ -29,7 +30,11 @@
     "@types/lodash": "^4.14.133",
     "@types/morgan": "^1.7.35",
     "@types/natural": "^0.6.0",
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.13.0",
     "gulp": "^4.0.2",
-    "gulp-typescript": "^5.0.1"
+    "gulp-typescript": "^5.0.1",
+    "tslint": "^5.17.0",
+    "tslint-eslint-rules": "^5.4.0"
   }
 }

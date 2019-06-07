@@ -1,5 +1,5 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
-import * as Natural from '../natural'
+import * as Natural from '../natural';
 
 class ClassifyApi extends RESTDataSource {
     constructor() {
@@ -15,10 +15,10 @@ class ClassifyApi extends RESTDataSource {
         return Natural.classifications(input, classifierName);
     }
     async addDocument(input: string, output: string, classifierName: string) {
-        return await Natural.addDocument(input, output, classifierName);
+        return Natural.addDocument(input, output, classifierName);
     }
     async getDocument(output: string, classifierName: string) {
-        return await Natural.getDocument(output, classifierName);
+        return Natural.getDocument(output, classifierName);
     }
     async addDocuments(documents: [{input: string, output: string}], classifierName: string) {
         for (const {input, output} of documents) {
@@ -27,19 +27,19 @@ class ClassifyApi extends RESTDataSource {
         return 'Documents Added.';
     }
     async removeDocument(output: string, classifierName: string) {
-        return await Natural.removeDocument(output, classifierName);
+        return Natural.removeDocument(output, classifierName);
     }
     async saveDocuments(classifierName: string) {
-        return await Natural.saveDocuments(classifierName);
+        return Natural.saveDocuments(classifierName);
     }
     async loadDocuments(classifierName: string) {
-        return await Natural.loadDocuments(classifierName);
+        return Natural.loadDocuments(classifierName);
     }
     async train(classifierName: string) {
-        return await Natural.train(classifierName);
+        return Natural.train(classifierName);
     }
     async loadTrainingModel(classifierName: string) {
-        return await Natural.loadTrainingModel(classifierName);
+        return Natural.loadTrainingModel(classifierName);
     }
 }
 

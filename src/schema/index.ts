@@ -15,18 +15,18 @@ const Mutation = `
 
 import {
     typeDef as Classify,
-    resolvers as ClassifyResolvers
-} from './classify'
+    resolvers as ClassifyResolvers,
+} from './classify';
 
 export const schema = makeExecutableSchema({
     typeDefs: [
         Query,
         Mutation,
-        Classify
+        Classify,
     ],
     resolvers: merge(
-        ClassifyResolvers
-    )
+        ClassifyResolvers,
+    ),
 });
 
 export default schema;

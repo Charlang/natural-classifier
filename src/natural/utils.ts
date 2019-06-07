@@ -9,15 +9,14 @@ export const getList = async () => {
         console.error('❗️List not exist!');
         return [];
     }
-    
-}
+};
 
 export const saveName = async (name: string) => {
     const list: string[] = await getList();
     if (!list.includes(name)) {
         list.push(name);
         await fsPromises.writeFile(`${process.cwd()}${LIST_NAME}`, JSON.stringify(list));
-    } 
+    }
     return true;
 };
 
@@ -30,4 +29,3 @@ export const loadFile = async (name: string) => {
     const data = JSON.parse(await fsPromises.readFile(`${process.cwd()}/data/${name}.json`, {encoding: 'utf8'}));
     return data;
 };
-

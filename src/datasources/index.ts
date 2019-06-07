@@ -1,11 +1,10 @@
 import ClassifyApi from './classifyApi';
 
-interface dataSources {
-    classifyApi: ClassifyApi
+interface IDataSources {
+    classifyApi: ClassifyApi;
 }
 
 export {
     ClassifyApi,
-    dataSources
-}
-
+    IDataSources,
+};

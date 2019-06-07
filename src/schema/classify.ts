@@ -1,5 +1,5 @@
 import { gql } from 'apollo-server-express';
-import { dataSources } from '../datasources';
+import { IDataSources } from '../datasources';
 
 export const typeDef = gql`
     extend type Query {
@@ -29,51 +29,51 @@ export const typeDef = gql`
 
 export const resolvers = {
     Query: {
-        getClassify: async (_: any, props: any, { dataSources }: { dataSources: dataSources }) => {
+        getClassify: async (_: any, props: any, { dataSources }: { dataSources: IDataSources }) => {
             const result = await dataSources.classifyApi.getClassify(props.input, props.classifierName);
             return result;
         },
-        getClassifications: async (_: any, props: any, { dataSources }: {  dataSources: dataSources  }) => {
+        getClassifications: async (_: any, props: any, { dataSources }: {  dataSources: IDataSources  }) => {
             const result = await dataSources.classifyApi.getClassifications(props.input, props.classifierName);
             return result;
         },
-        getClassifierList: async (_: any, __: any, { dataSources }: {  dataSources: dataSources  }) => {
+        getClassifierList: async (_: any, __: any, { dataSources }: {  dataSources: IDataSources  }) => {
             const result = await dataSources.classifyApi.getClassifierList();
             return result;
         },
-        getDocument: async (_: any, props: any, { dataSources }: {  dataSources: dataSources  }) => {
+        getDocument: async (_: any, props: any, { dataSources }: {  dataSources: IDataSources  }) => {
             const result = await dataSources.classifyApi.getDocument(props.output, props.classifierName);
             return result;
         },
     },
     Mutation: {
-        addDocument: async (_: any, props: any, { dataSources }: { dataSources: dataSources }) => {
+        addDocument: async (_: any, props: any, { dataSources }: { dataSources: IDataSources }) => {
             const result = await dataSources.classifyApi.addDocument(props.input, props.output, props.classifierName);
             return result;
         },
-        removeDocument: async (_: any, props: any, { dataSources }: { dataSources: dataSources }) => {
+        removeDocument: async (_: any, props: any, { dataSources }: { dataSources: IDataSources }) => {
             const result = await dataSources.classifyApi.removeDocument(props.output, props.classifierName);
             return result;
         },
-        addDocuments: async (_: any, props: any, { dataSources }: { dataSources: dataSources }) => {
+        addDocuments: async (_: any, props: any, { dataSources }: { dataSources: IDataSources }) => {
             const result = await dataSources.classifyApi.addDocuments(props.documents, props.classifierName);
             return result;
         },
-        saveDocuments: async (_: any, props: any, { dataSources }: { dataSources: dataSources }) => {
+        saveDocuments: async (_: any, props: any, { dataSources }: { dataSources: IDataSources }) => {
             const result = await dataSources.classifyApi.saveDocuments(props.classifierName);
             return result;
         },
-        loadDocuments: async (_: any, props: any, { dataSources }: { dataSources: dataSources }) => {
+        loadDocuments: async (_: any, props: any, { dataSources }: { dataSources: IDataSources }) => {
             const result = await dataSources.classifyApi.loadDocuments(props.classifierName);
             return result;
         },
-        train: async (_: any, props: any, { dataSources }: { dataSources: dataSources }) => {
+        train: async (_: any, props: any, { dataSources }: { dataSources: IDataSources }) => {
             const result = await dataSources.classifyApi.train(props.classifierName);
             return result;
         },
-        loadTrainingModel: async (_: any, props: any, { dataSources }: { dataSources: dataSources }) => {
+        loadTrainingModel: async (_: any, props: any, { dataSources }: { dataSources: IDataSources }) => {
             const result = await dataSources.classifyApi.loadTrainingModel(props.classifierName);
             return result;
         },
     },
-}
+};

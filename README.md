@@ -26,4 +26,3 @@ Pre Installation
 ### Build for production
     yarn build
     yarn start
-
