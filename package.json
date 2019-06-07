@@ -34,7 +34,13 @@
     "eslint-config-google": "^0.13.0",
     "gulp": "^4.0.2",
     "gulp-typescript": "^5.0.1",
+    "husky": "^2.4.0",
     "tslint": "^5.17.0",
     "tslint-eslint-rules": "^5.4.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
   }
 }
