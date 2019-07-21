@@ -18,7 +18,7 @@ module.exports = {
             2,
             {
                 "code": 120,
-                "tabWidth": 4,
+                "tabWidth": 2,
                 "ignoreUrls": true
             }
         ],
